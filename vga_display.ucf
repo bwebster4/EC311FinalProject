@@ -1,0 +1,75 @@
+#//////////////////////////////////////////////////////////////////////////////////
+#// Company: Boston University
+#// Engineer: Zafar M. Takhirov
+#// 
+#// Create Date:    12:59:40 04/12/2011 
+#// Design Name: EC311 Support Files
+#// Module Name:    vga_display (UCF)
+#// Project Name: Lab5 / Lab6 / Project
+#// Target Devices: xc6slx16-3csg324
+#// Tool versions: XILINX ISE 13.3
+#// Description: 
+#//
+#// Dependencies: vga_controller_640_60
+#//
+#// Revision: 
+#// Revision 0.01 - File Created
+#// Additional Comments: This file is specific to xc6slx16-3csg324
+#//
+#//////////////////////////////////////////////////////////////////////////////////
+
+###############################
+# Specify color outputs:
+
+NET "G[0]" LOC = P8;
+NET "G[2]" LOC = V6;
+
+NET "R[0]" LOC = U7;
+NET "R[1]" LOC = V7;
+NET "R[2]" LOC = N7;
+
+###############################
+# Specify sync outputs:
+NET "HS" LOC = N6;
+NET "VS" LOC = P7;
+
+###############################
+# Specify color inputs:
+#NET "B_control[0]" LOC = T10;
+#NET "B_control[1]" LOC = T9;
+
+#NET "G_control[0]" LOC = V9;
+#NET "G_control[1]" LOC = M8;
+#NET "G_control[2]" LOC = N8;
+
+#NET "R_control[0]" LOC = U8;
+#NET "R_control[1]" LOC = V8;
+#NET "R_control[2]" LOC = T5;
+
+###############################
+# Specify controls:
+NET "clk" LOC = V10;
+
+NET "B[0]" LOC = R7;
+NET "B[1]" LOC = T7;
+NET "LED_Val[0]" LOC = N16;
+NET "LED_Val[1]" LOC = N15;
+NET "LED_Val[2]" LOC = P18;
+NET "LED_Val[3]" LOC = P17;
+
+
+NET "LED_Seg[0]" LOC = L14;
+NET "LED_Seg[1]" LOC = N14;
+NET "LED_Seg[2]" LOC = M14;
+NET "LED_Seg[3]" LOC = U18;
+NET "LED_Seg[4]" LOC = U17;
+NET "LED_Seg[5]" LOC = T18;
+NET "LED_Seg[6]" LOC = T17;
+
+# PlanAhead Generated physical constraints 
+
+NET "boxes[0]" LOC = C4;
+NET "boxes[1]" LOC = C9;
+NET "boxes[2]" LOC = B8;
+NET "boxes[3]" LOC = A8;
+NET "boxes[4]" LOC = D9;

@@ -1,0 +1,6 @@
+verilog work "bin2led7decimal.v"
+verilog work "vga_controller_640_60.v"
+verilog work "LEDmux.v"
+verilog work "ipcore_dir/game_over_mem.v"
+verilog work "debouncer.v"
+verilog work "vga_display_up.v"

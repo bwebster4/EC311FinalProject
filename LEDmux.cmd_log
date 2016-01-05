@@ -1,0 +1,22 @@
+xst -intstyle ise -ifn "X:/EC311/EC311Project/LEDmux.xst" -ofn "X:/EC311/EC311Project/LEDmux.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc binary_to_segment.ucf -p xc6slx16-csg324-3 LEDmux.ngc LEDmux.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o LEDmux_map.ncd LEDmux.ngd LEDmux.pcf 
+par -w -intstyle ise -ol high -mt off LEDmux_map.ncd LEDmux.ncd LEDmux.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml LEDmux.twx LEDmux.ncd -o LEDmux.twr LEDmux.pcf -ucf binary_to_segment.ucf 
+bitgen -intstyle ise -f LEDmux.ut LEDmux.ncd 
+bitgen -intstyle ise -f LEDmux.ut LEDmux.ncd 
+xst -intstyle ise -ifn "X:/EC311/EC311Project/LEDmux.xst" -ofn "X:/EC311/EC311Project/LEDmux.syr" 
+xst -intstyle ise -ifn "X:/EC311/EC311Project/LEDmux.xst" -ofn "X:/EC311/EC311Project/LEDmux.syr" 
+xst -intstyle ise -ifn "X:/EC311/EC311Project/LEDmux.xst" -ofn "X:/EC311/EC311Project/LEDmux.syr" 
+xst -intstyle ise -ifn "X:/EC311/EC311Project/LEDmux.xst" -ofn "X:/EC311/EC311Project/LEDmux.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc binary_to_segment.ucf -p xc6slx16-csg324-3 LEDmux.ngc LEDmux.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o LEDmux_map.ncd LEDmux.ngd LEDmux.pcf 
+par -w -intstyle ise -ol high -mt off LEDmux_map.ncd LEDmux.ncd LEDmux.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml LEDmux.twx LEDmux.ncd -o LEDmux.twr LEDmux.pcf -ucf binary_to_segment.ucf 
+bitgen -intstyle ise -f LEDmux.ut LEDmux.ncd 
+xst -intstyle ise -ifn "X:/EC311/EC311Project/LEDmux.xst" -ofn "X:/EC311/EC311Project/LEDmux.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc binary_to_segment.ucf -p xc6slx16-csg324-3 LEDmux.ngc LEDmux.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o LEDmux_map.ncd LEDmux.ngd LEDmux.pcf 
+par -w -intstyle ise -ol high -mt off LEDmux_map.ncd LEDmux.ncd LEDmux.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml LEDmux.twx LEDmux.ncd -o LEDmux.twr LEDmux.pcf -ucf binary_to_segment.ucf 
+bitgen -intstyle ise -f LEDmux.ut LEDmux.ncd 

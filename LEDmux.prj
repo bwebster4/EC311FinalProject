@@ -1,0 +1,2 @@
+verilog work "bin2led7decimal.v"
+verilog work "LEDmux.v"

@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# PlanAhead v14.2 (64-bit)
+# Build 194362 by xbuild on Fri Jul 20 18:52:11 MDT 2012
+# Start of session at: Wed Dec 09 17:18:42 2015
+# Process ID: 5148
+# Log file: C:/Users/bweb/Downloads/EC311Project/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/bweb/Downloads/EC311Project/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/bweb/Downloads/EC311Project/pa.fromHdl.tcl
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+refresh_design
+startgroup
+set_property package_pin C4 [get_ports {boxes[0]}]
+endgroup
+startgroup
+set_property package_pin C9 [get_ports {boxes[1]}]
+endgroup
+refresh_design
+startgroup
+set_property package_pin C4 [get_ports {boxes[0]}]
+endgroup
+startgroup
+set_property package_pin C9 [get_ports {boxes[1]}]
+endgroup
+startgroup
+set_property package_pin B8 [get_ports {boxes[2]}]
+endgroup
+startgroup
+set_property package_pin A8 [get_ports {boxes[3]}]
+endgroup
+startgroup
+set_property package_pin D9 [get_ports {boxes[4]}]
+endgroup
+save_design

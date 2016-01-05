@@ -1,0 +1,885 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: vga_display.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "vga_display.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "vga_display"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : vga_display
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\bin2led7decimal.v" into library work
+Parsing module <binary_to_segment_decimal>.
+Analyzing Verilog file "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\vga_controller_640_60.v" into library work
+Parsing module <vga_controller_640_60>.
+Analyzing Verilog file "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\LEDmux.v" into library work
+Parsing module <LEDmux>.
+Analyzing Verilog file "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\ipcore_dir\game_over_mem.v" into library work
+Parsing module <game_over_mem>.
+Analyzing Verilog file "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\debouncer.v" into library work
+Parsing module <debouncer>.
+Analyzing Verilog file "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\vga_display_up.v" into library work
+Parsing module <vga_display>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <vga_display>.
+WARNING:HDLCompiler:872 - "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\vga_display_up.v" Line 31: Using initial value of white since it is never assigned
+
+Elaborating module <LEDmux>.
+
+Elaborating module <binary_to_segment_decimal>.
+
+Elaborating module <debouncer>.
+
+Elaborating module <vga_controller_640_60>.
+
+Elaborating module <game_over_mem>.
+WARNING:HDLCompiler:1499 - "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\ipcore_dir\game_over_mem.v" Line 39: Empty module <game_over_mem> remains a black box.
+WARNING:HDLCompiler:413 - "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\vga_display_up.v" Line 318: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\vga_display_up.v" Line 323: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\vga_display_up.v" Line 327: Result of 20-bit expression is truncated to fit in 15-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <vga_display>.
+    Related source file is "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\vga_display_up.v".
+        N = 2
+        M = 17
+    Found 17-bit register for signal <count2>.
+    Found 1-bit register for signal <clk_25Mhz>.
+    Found 1-bit register for signal <clk_1KHz>.
+    Found 2-bit register for signal <select>.
+    Found 4-bit register for signal <bin>.
+    Found 4-bit register for signal <pos_1>.
+    Found 4-bit register for signal <pos_4>.
+    Found 1-bit register for signal <xocount>.
+    Found 1-bit register for signal <box_assigned<8>>.
+    Found 1-bit register for signal <box_assigned<7>>.
+    Found 1-bit register for signal <box_assigned<6>>.
+    Found 1-bit register for signal <box_assigned<5>>.
+    Found 1-bit register for signal <box_assigned<4>>.
+    Found 1-bit register for signal <box_assigned<3>>.
+    Found 1-bit register for signal <box_assigned<2>>.
+    Found 1-bit register for signal <box_assigned<1>>.
+    Found 1-bit register for signal <box_assigned<0>>.
+    Found 1-bit register for signal <box_val<8>>.
+    Found 1-bit register for signal <box_val<7>>.
+    Found 1-bit register for signal <box_val<6>>.
+    Found 1-bit register for signal <box_val<5>>.
+    Found 1-bit register for signal <box_val<4>>.
+    Found 1-bit register for signal <box_val<3>>.
+    Found 1-bit register for signal <box_val<2>>.
+    Found 1-bit register for signal <box_val<1>>.
+    Found 1-bit register for signal <box_val<0>>.
+    Found 2-bit register for signal <state>.
+    Found 13-bit register for signal <game_over_counter>.
+    Found 11-bit register for signal <round_over_counter>.
+    Found 15-bit register for signal <addra>.
+    Found 2-bit register for signal <B>.
+    Found 3-bit register for signal <G>.
+    Found 3-bit register for signal <R>.
+    Found 2-bit register for signal <count>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk_1KHz (rising_edge)                         |
+    | Power Up State     | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 2-bit adder for signal <count[1]_GND_1_o_add_5_OUT> created at line 76.
+    Found 17-bit adder for signal <count2[16]_GND_1_o_add_6_OUT> created at line 77.
+    Found 2-bit adder for signal <select[1]_GND_1_o_add_162_OUT> created at line 166.
+    Found 1-bit adder for signal <xocount_PWR_1_o_add_164_OUT<0>> created at line 182.
+    Found 4-bit adder for signal <pos_4[3]_GND_1_o_add_186_OUT> created at line 263.
+    Found 4-bit adder for signal <pos_1[3]_GND_1_o_add_189_OUT> created at line 275.
+    Found 11-bit adder for signal <round_over_counter[10]_GND_1_o_add_194_OUT> created at line 283.
+    Found 13-bit adder for signal <game_over_counter[12]_GND_1_o_add_203_OUT> created at line 296.
+    Found 19-bit adder for signal <n0633> created at line 327.
+    Found 10-bit subtractor for signal <hcount[10]_x0[10]_sub_228_OUT<9:0>> created at line 318.
+    Found 10-bit subtractor for signal <vcount[10]_y0[10]_sub_232_OUT<9:0>> created at line 323.
+    Found 10x9-bit multiplier for signal <n0699> created at line 327.
+    Found 4-bit 4-to-1 multiplexer for signal <select[1]_pos_4[3]_wide_mux_163_OUT> created at line 167.
+    Found 11-bit comparator lessequal for signal <n0011> created at line 111
+    Found 11-bit comparator lessequal for signal <n0013> created at line 111
+    Found 11-bit comparator lessequal for signal <n0017> created at line 113
+    Found 11-bit comparator lessequal for signal <n0019> created at line 113
+    Found 11-bit comparator lessequal for signal <n0023> created at line 115
+    Found 11-bit comparator lessequal for signal <n0025> created at line 115
+    Found 11-bit comparator lessequal for signal <n0029> created at line 117
+    Found 11-bit comparator lessequal for signal <n0031> created at line 117
+    Found 11-bit comparator lessequal for signal <n0035> created at line 129
+    Found 11-bit comparator lessequal for signal <n0037> created at line 129
+    Found 11-bit comparator lessequal for signal <n0040> created at line 129
+    Found 11-bit comparator lessequal for signal <n0043> created at line 129
+    Found 11-bit comparator lessequal for signal <n0046> created at line 129
+    Found 11-bit comparator lessequal for signal <n0048> created at line 129
+    Found 11-bit comparator lessequal for signal <n0051> created at line 129
+    Found 11-bit comparator lessequal for signal <n0054> created at line 129
+    Found 11-bit comparator lessequal for signal <n0062> created at line 130
+    Found 11-bit comparator lessequal for signal <n0064> created at line 130
+    Found 11-bit comparator lessequal for signal <n0067> created at line 130
+    Found 11-bit comparator lessequal for signal <n0070> created at line 130
+    Found 11-bit comparator lessequal for signal <n0075> created at line 131
+    Found 11-bit comparator lessequal for signal <n0077> created at line 131
+    Found 11-bit comparator lessequal for signal <n0080> created at line 131
+    Found 11-bit comparator lessequal for signal <n0083> created at line 131
+    Found 11-bit comparator lessequal for signal <n0086> created at line 131
+    Found 11-bit comparator lessequal for signal <n0088> created at line 131
+    Found 11-bit comparator lessequal for signal <n0091> created at line 131
+    Found 11-bit comparator lessequal for signal <n0094> created at line 131
+    Found 11-bit comparator lessequal for signal <n0099> created at line 132
+    Found 11-bit comparator lessequal for signal <n0101> created at line 132
+    Found 11-bit comparator lessequal for signal <n0106> created at line 132
+    Found 11-bit comparator lessequal for signal <n0108> created at line 132
+    Found 11-bit comparator lessequal for signal <n0115> created at line 133
+    Found 11-bit comparator lessequal for signal <n0117> created at line 133
+    Found 11-bit comparator lessequal for signal <n0120> created at line 133
+    Found 11-bit comparator lessequal for signal <n0123> created at line 133
+    Found 11-bit comparator lessequal for signal <n0126> created at line 133
+    Found 11-bit comparator lessequal for signal <n0128> created at line 133
+    Found 11-bit comparator lessequal for signal <n0131> created at line 133
+    Found 11-bit comparator lessequal for signal <n0134> created at line 133
+    Found 11-bit comparator lessequal for signal <n0147> created at line 135
+    Found 11-bit comparator lessequal for signal <n0153> created at line 136
+    Found 11-bit comparator lessequal for signal <n0156> created at line 136
+    Found 11-bit comparator lessequal for signal <n0159> created at line 136
+    Found 11-bit comparator lessequal for signal <n0162> created at line 136
+    Found 11-bit comparator lessequal for signal <n0179> created at line 139
+    Found 11-bit comparator lessequal for signal <n0181> created at line 139
+    Found 11-bit comparator lessequal for signal <n0187> created at line 139
+    Found 11-bit comparator lessequal for signal <n0189> created at line 139
+    Found 11-bit comparator lessequal for signal <n0196> created at line 140
+    Found 11-bit comparator lessequal for signal <n0198> created at line 140
+    Found 11-bit comparator lessequal for signal <n0204> created at line 140
+    Found 11-bit comparator lessequal for signal <n0206> created at line 140
+    Found 11-bit comparator lessequal for signal <n0213> created at line 141
+    Found 11-bit comparator lessequal for signal <n0216> created at line 141
+    Found 11-bit comparator lessequal for signal <n0220> created at line 141
+    Found 11-bit comparator lessequal for signal <n0223> created at line 141
+    Found 11-bit comparator lessequal for signal <n0242> created at line 144
+    Found 11-bit comparator lessequal for signal <n0245> created at line 144
+    Found 11-bit comparator lessequal for signal <n0249> created at line 144
+    Found 11-bit comparator lessequal for signal <n0252> created at line 144
+    Found 11-bit comparator lessequal for signal <n0479> created at line 317
+    Found 11-bit comparator greater for signal <hcount[10]_x1[10]_LessThan_227_o> created at line 317
+    Found 11-bit comparator lessequal for signal <n0485> created at line 322
+    Found 11-bit comparator greater for signal <vcount[10]_y1[10]_LessThan_231_o> created at line 322
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred  11 Adder/Subtractor(s).
+	inferred 101 D-type flip-flop(s).
+	inferred  65 Comparator(s).
+	inferred  66 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <vga_display> synthesized.
+
+Synthesizing Unit <LEDmux>.
+    Related source file is "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\LEDmux.v".
+    Found 4x4-bit Read Only RAM for signal <B>
+    Summary:
+	inferred   1 RAM(s).
+Unit <LEDmux> synthesized.
+
+Synthesizing Unit <binary_to_segment_decimal>.
+    Related source file is "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\bin2led7decimal.v".
+    Found 16x7-bit Read Only RAM for signal <seven>
+    Summary:
+	inferred   1 RAM(s).
+Unit <binary_to_segment_decimal> synthesized.
+
+Synthesizing Unit <debouncer>.
+    Related source file is "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\debouncer.v".
+    Found 1-bit register for signal <PB_sync_1>.
+    Found 9-bit register for signal <PB_cnt>.
+    Found 1-bit register for signal <state>.
+    Found 1-bit register for signal <PB_sync_0>.
+    Found 9-bit adder for signal <PB_cnt[8]_GND_4_o_add_4_OUT> created at line 45.
+    Found 1-bit comparator equal for signal <state_PB_sync_1_equal_4_o> created at line 41
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <debouncer> synthesized.
+
+Synthesizing Unit <vga_controller_640_60>.
+    Related source file is "\\ad\eng\users\m\t\mtrexler\Desktop\EC311Project\vga_controller_640_60.v".
+        HMAX = 800
+        VMAX = 525
+        HLINES = 640
+        HFP = 648
+        HSP = 744
+        VLINES = 480
+        VFP = 482
+        VSP = 484
+        SPP = 0
+    Found 11-bit register for signal <hcounter>.
+    Found 11-bit register for signal <vcounter>.
+    Found 1-bit register for signal <HS>.
+    Found 1-bit register for signal <VS>.
+    Found 1-bit register for signal <blank>.
+    Found 11-bit adder for signal <hcounter[10]_GND_5_o_add_3_OUT> created at line 53.
+    Found 11-bit adder for signal <vcounter[10]_GND_5_o_add_9_OUT> created at line 61.
+    Found 11-bit comparator lessequal for signal <n0012> created at line 68
+    Found 11-bit comparator greater for signal <hcounter[10]_GND_5_o_LessThan_16_o> created at line 68
+    Found 11-bit comparator lessequal for signal <n0018> created at line 75
+    Found 11-bit comparator greater for signal <vcounter[10]_GND_5_o_LessThan_19_o> created at line 75
+    Found 11-bit comparator greater for signal <hcounter[10]_GND_5_o_LessThan_20_o> created at line 80
+    Found 11-bit comparator greater for signal <vcounter[10]_GND_5_o_LessThan_21_o> created at line 80
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  25 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <vga_controller_640_60> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 16x7-bit single-port Read Only RAM                    : 1
+ 4x4-bit single-port Read Only RAM                     : 1
+# Multipliers                                          : 1
+ 10x9-bit multiplier                                   : 1
+# Adders/Subtractors                                   : 18
+ 1-bit adder                                           : 1
+ 10-bit subtractor                                     : 2
+ 11-bit adder                                          : 3
+ 13-bit adder                                          : 1
+ 17-bit adder                                          : 1
+ 19-bit adder                                          : 1
+ 2-bit adder                                           : 2
+ 4-bit adder                                           : 2
+ 9-bit adder                                           : 5
+# Registers                                            : 50
+ 1-bit register                                        : 30
+ 11-bit register                                       : 3
+ 13-bit register                                       : 1
+ 15-bit register                                       : 1
+ 17-bit register                                       : 1
+ 2-bit register                                        : 3
+ 3-bit register                                        : 2
+ 4-bit register                                        : 3
+ 9-bit register                                        : 6
+# Comparators                                          : 76
+ 1-bit comparator equal                                : 5
+ 11-bit comparator greater                             : 6
+ 11-bit comparator lessequal                           : 65
+# Multiplexers                                         : 68
+ 1-bit 2-to-1 multiplexer                              : 55
+ 10-bit 2-to-1 multiplexer                             : 2
+ 11-bit 2-to-1 multiplexer                             : 4
+ 13-bit 2-to-1 multiplexer                             : 1
+ 2-bit 2-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 2
+ 4-bit 2-to-1 multiplexer                              : 2
+ 4-bit 4-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/game_over_mem.ngc>.
+Loading core <game_over_mem> for timing and area information for instance <memory_1>.
+
+Synthesizing (advanced) Unit <LEDmux>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_B> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 4-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <select>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <B>             |          |
+    -----------------------------------------------------------------------
+Unit <LEDmux> synthesized (advanced).
+
+Synthesizing (advanced) Unit <binary_to_segment_decimal>.
+INFO:Xst:3231 - The small RAM <Mram_seven> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 7-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <bin>           |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <seven>         |          |
+    -----------------------------------------------------------------------
+Unit <binary_to_segment_decimal> synthesized (advanced).
+
+Synthesizing (advanced) Unit <debouncer>.
+The following registers are absorbed into counter <PB_cnt>: 1 register on signal <PB_cnt>.
+Unit <debouncer> synthesized (advanced).
+
+Synthesizing (advanced) Unit <vga_controller_640_60>.
+The following registers are absorbed into counter <hcounter>: 1 register on signal <hcounter>.
+The following registers are absorbed into counter <vcounter>: 1 register on signal <vcounter>.
+Unit <vga_controller_640_60> synthesized (advanced).
+
+Synthesizing (advanced) Unit <vga_display>.
+The following registers are absorbed into counter <count2>: 1 register on signal <count2>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+The following registers are absorbed into counter <select>: 1 register on signal <select>.
+The following registers are absorbed into counter <pos_1>: 1 register on signal <pos_1>.
+The following registers are absorbed into counter <pos_4>: 1 register on signal <pos_4>.
+	Multiplier <Mmult_n0699> in block <vga_display> and adder/subtractor <Madd_n0633_Madd> in block <vga_display> are combined into a MAC<Maddsub_n0699>.
+	The following registers are also absorbed by the MAC: <addra> in block <vga_display>.
+Unit <vga_display> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 16x7-bit single-port distributed Read Only RAM        : 1
+ 4x4-bit single-port distributed Read Only RAM         : 1
+# MACs                                                 : 1
+ 10x9-to-15-bit MAC                                    : 1
+# Adders/Subtractors                                   : 6
+ 1-bit adder                                           : 1
+ 10-bit subtractor                                     : 2
+ 11-bit adder                                          : 1
+ 13-bit adder                                          : 1
+ 2-bit adder                                           : 1
+# Counters                                             : 12
+ 11-bit up counter                                     : 2
+ 17-bit up counter                                     : 1
+ 2-bit up counter                                      : 2
+ 4-bit up counter                                      : 2
+ 9-bit up counter                                      : 5
+# Registers                                            : 75
+ Flip-Flops                                            : 75
+# Comparators                                          : 76
+ 1-bit comparator equal                                : 5
+ 11-bit comparator greater                             : 6
+ 11-bit comparator lessequal                           : 65
+# Multiplexers                                         : 64
+ 1-bit 2-to-1 multiplexer                              : 55
+ 10-bit 2-to-1 multiplexer                             : 2
+ 11-bit 2-to-1 multiplexer                             : 2
+ 13-bit 2-to-1 multiplexer                             : 1
+ 2-bit 2-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 2
+ 4-bit 4-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+ 11    | 11
+-------------------
+INFO:Xst:2146 - In block <vga_display>, Counter <count2> <count> are equivalent, XST will keep only <count2>.
+
+Optimizing unit <vga_display> ...
+
+Optimizing unit <debouncer> ...
+
+Optimizing unit <vga_controller_640_60> ...
+WARNING:Xst:1293 - FF/Latch <vc/vcounter_10> has a constant value of 0 in block <vga_display>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block vga_display, actual ratio is 6.
+FlipFlop db0/state has been replicated 3 time(s)
+FlipFlop db1/state has been replicated 2 time(s)
+FlipFlop db2/state has been replicated 2 time(s)
+FlipFlop db3/state has been replicated 2 time(s)
+FlipFlop db4/state has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <vga_display> :
+	Found 2-bit shift register for signal <db4/PB_sync_1>.
+	Found 2-bit shift register for signal <db3/PB_sync_1>.
+	Found 2-bit shift register for signal <db2/PB_sync_1>.
+	Found 2-bit shift register for signal <db1/PB_sync_1>.
+	Found 2-bit shift register for signal <db0/PB_sync_1>.
+Unit <vga_display> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 171
+ Flip-Flops                                            : 171
+# Shift Registers                                      : 5
+ 2-bit shift register                                  : 5
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : vga_display.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 675
+#      GND                         : 2
+#      INV                         : 14
+#      LUT1                        : 67
+#      LUT2                        : 47
+#      LUT3                        : 65
+#      LUT4                        : 68
+#      LUT5                        : 52
+#      LUT6                        : 174
+#      MUXCY                       : 87
+#      MUXF7                       : 1
+#      VCC                         : 2
+#      XORCY                       : 96
+# FlipFlops/Latches                : 181
+#      FD                          : 32
+#      FDC                         : 11
+#      FDCE                        : 10
+#      FDE                         : 72
+#      FDR                         : 50
+#      FDS                         : 6
+# RAMS                             : 9
+#      RAMB16BWER                  : 8
+#      RAMB8BWER                   : 1
+# Shift Registers                  : 5
+#      SRLC16E                     : 5
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 26
+#      IBUF                        : 5
+#      OBUF                        : 21
+# DSPs                             : 1
+#      DSP48A1                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             173  out of  18224     0%  
+ Number of Slice LUTs:                  492  out of   9112     5%  
+    Number used as Logic:               487  out of   9112     5%  
+    Number used as Memory:                5  out of   2176     0%  
+       Number used as SRL:                5
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    512
+   Number with an unused Flip Flop:     339  out of    512    66%  
+   Number with an unused LUT:            20  out of    512     3%  
+   Number of fully used LUT-FF pairs:   153  out of    512    29%  
+   Number of unique control sets:        26
+
+IO Utilization: 
+ Number of IOs:                          27
+ Number of bonded IOBs:                  27  out of    232    11%  
+    IOB Flip Flops/Latches:               8
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                9  out of     32    28%  
+    Number using Block RAM only:          9
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+ Number of DSP48A1s:                      1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                                                                                             | Load  |
+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
+clk                                | BUFGP                                                                                                                             | 28    |
+clk_1KHz                           | BUFG                                                                                                                              | 130   |
+clk_25Mhz                          | BUFG                                                                                                                              | 38    |
+memory_1/N1                        | NONE(memory_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)| 9     |
+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 6.338ns (Maximum Frequency: 157.769MHz)
+   Minimum input arrival time before clock: 1.801ns
+   Maximum output required time after clock: 4.821ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 1.989ns (frequency: 502.702MHz)
+  Total number of paths / destination ports: 155 / 19
+-------------------------------------------------------------------------
+Delay:               1.989ns (Levels of Logic = 17)
+  Source:            count2_1 (FF)
+  Destination:       count2_16 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: count2_1 to count2_16
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.617  count2_1 (count2_1)
+     LUT1:I0->O            1   0.205   0.000  Mcount_count2_cy<1>_rt (Mcount_count2_cy<1>_rt)
+     MUXCY:S->O            1   0.172   0.000  Mcount_count2_cy<1> (Mcount_count2_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_count2_cy<2> (Mcount_count2_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_count2_cy<3> (Mcount_count2_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_count2_cy<4> (Mcount_count2_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_count2_cy<5> (Mcount_count2_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_count2_cy<6> (Mcount_count2_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_count2_cy<7> (Mcount_count2_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_count2_cy<8> (Mcount_count2_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_count2_cy<9> (Mcount_count2_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_count2_cy<10> (Mcount_count2_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_count2_cy<11> (Mcount_count2_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_count2_cy<12> (Mcount_count2_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_count2_cy<13> (Mcount_count2_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_count2_cy<14> (Mcount_count2_cy<14>)
+     MUXCY:CI->O           0   0.019   0.000  Mcount_count2_cy<15> (Mcount_count2_cy<15>)
+     XORCY:CI->O           1   0.180   0.000  Mcount_count2_xor<16> (Result<16>)
+     FD:D                      0.102          count2_16
+    ----------------------------------------
+    Total                      1.989ns (1.372ns logic, 0.617ns route)
+                                       (69.0% logic, 31.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_1KHz'
+  Clock period: 6.338ns (frequency: 157.769MHz)
+  Total number of paths / destination ports: 4349 / 232
+-------------------------------------------------------------------------
+Delay:               6.338ns (Levels of Logic = 5)
+  Source:            db2/state_1 (FF)
+  Destination:       pos_4_1 (FF)
+  Source Clock:      clk_1KHz rising
+  Destination Clock: clk_1KHz rising
+
+  Data Path: db2/state_1 to pos_4_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.447   0.879  db2/state_1 (db2/state_1)
+     LUT4:I1->O            8   0.205   0.803  db_boxes[4]_box_val[8]_select_183_OUT<2>21 (db_boxes[4]_box_val[8]_select_183_OUT<2>2)
+     LUT5:I4->O            3   0.205   0.755  db_boxes[4]_box_val[8]_select_183_OUT<5>1 (db_boxes[4]_box_val[8]_select_183_OUT<3>)
+     LUT4:I2->O            1   0.203   0.580  db_boxes[4]_db_boxes[4]_OR_76_o9 (db_boxes[4]_db_boxes[4]_OR_76_o9)
+     LUT6:I5->O            3   0.205   0.879  db_boxes[4]_db_boxes[4]_OR_76_o10 (db_boxes[4]_db_boxes[4]_OR_76_o10)
+     LUT6:I3->O            3   0.205   0.650  _n0855_inv1 (_n0855_inv)
+     FDE:CE                    0.322          pos_4_1
+    ----------------------------------------
+    Total                      6.338ns (1.792ns logic, 4.546ns route)
+                                       (28.3% logic, 71.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_25Mhz'
+  Clock period: 5.025ns (frequency: 198.989MHz)
+  Total number of paths / destination ports: 1753 / 34
+-------------------------------------------------------------------------
+Delay:               5.025ns (Levels of Logic = 13)
+  Source:            vc/vcounter_5 (FF)
+  Destination:       vc/vcounter_9 (FF)
+  Source Clock:      clk_25Mhz rising
+  Destination Clock: clk_25Mhz rising
+
+  Data Path: vc/vcounter_5 to vc/vcounter_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            33   0.447   1.650  vc/vcounter_5 (vc/vcounter_5)
+     LUT5:I0->O            3   0.203   0.651  vc/GND_5_o_GND_5_o_equal_9_o<10>_SW0 (N52)
+     LUT6:I5->O            9   0.205   1.058  vc/GND_5_o_GND_5_o_equal_9_o<10> (vc/GND_5_o_GND_5_o_equal_9_o)
+     LUT3:I0->O            1   0.205   0.000  vc/Mcount_vcounter_lut<0> (vc/Mcount_vcounter_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  vc/Mcount_vcounter_cy<0> (vc/Mcount_vcounter_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  vc/Mcount_vcounter_cy<1> (vc/Mcount_vcounter_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  vc/Mcount_vcounter_cy<2> (vc/Mcount_vcounter_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  vc/Mcount_vcounter_cy<3> (vc/Mcount_vcounter_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  vc/Mcount_vcounter_cy<4> (vc/Mcount_vcounter_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  vc/Mcount_vcounter_cy<5> (vc/Mcount_vcounter_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  vc/Mcount_vcounter_cy<6> (vc/Mcount_vcounter_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  vc/Mcount_vcounter_cy<7> (vc/Mcount_vcounter_cy<7>)
+     MUXCY:CI->O           0   0.019   0.000  vc/Mcount_vcounter_cy<8> (vc/Mcount_vcounter_cy<8>)
+     XORCY:CI->O           1   0.180   0.000  vc/Mcount_vcounter_xor<9> (vc/Mcount_vcounter9)
+     FDCE:D                    0.102          vc/vcounter_9
+    ----------------------------------------
+    Total                      5.025ns (1.666ns logic, 3.359ns route)
+                                       (33.2% logic, 66.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_1KHz'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              1.801ns (Levels of Logic = 1)
+  Source:            boxes<2> (PAD)
+  Destination:       db2/Mshreg_PB_sync_1 (FF)
+  Destination Clock: clk_1KHz rising
+
+  Data Path: boxes<2> to db2/Mshreg_PB_sync_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.579  boxes_2_IBUF (boxes_2_IBUF)
+     SRLC16E:D                -0.060          db2/Mshreg_PB_sync_1
+    ----------------------------------------
+    Total                      1.801ns (1.222ns logic, 0.579ns route)
+                                       (67.9% logic, 32.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            R_2 (FF)
+  Destination:       R<2> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: R_2 to R<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q              1   0.447   0.579  R_2 (R_2)
+     OBUF:I->O                 2.571          R_2_OBUF (R<2>)
+    ----------------------------------------
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_1KHz'
+  Total number of paths / destination ports: 36 / 11
+-------------------------------------------------------------------------
+Offset:              4.821ns (Levels of Logic = 2)
+  Source:            bin_1 (FF)
+  Destination:       LED_Seg<6> (PAD)
+  Source Clock:      clk_1KHz rising
+
+  Data Path: bin_1 to LED_Seg<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               7   0.447   1.021  bin_1 (bin_1)
+     LUT4:I0->O            1   0.203   0.579  led/mod0/Mram_seven111 (LED_Seg_1_OBUF)
+     OBUF:I->O                 2.571          LED_Seg_1_OBUF (LED_Seg<1>)
+    ----------------------------------------
+    Total                      4.821ns (3.221ns logic, 1.600ns route)
+                                       (66.8% logic, 33.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_25Mhz'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            vc/HS (FF)
+  Destination:       HS (PAD)
+  Source Clock:      clk_25Mhz rising
+
+  Data Path: vc/HS to HS
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.447   0.579  vc/HS (vc/HS)
+     OBUF:I->O                 2.571          HS_OBUF (HS)
+    ----------------------------------------
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    1.989|         |         |         |
+clk_1KHz       |   13.255|         |         |         |
+clk_25Mhz      |   17.357|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_1KHz
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_1KHz       |    6.338|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_25Mhz
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.403|         |         |         |
+clk_1KHz       |    4.003|         |         |         |
+clk_25Mhz      |    5.025|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.06 secs
+ 
+--> 
+
+Total memory usage is 260644 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

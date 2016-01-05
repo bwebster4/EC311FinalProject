@@ -1,0 +1,88 @@
+--------------------------------------------------------------------------------
+Release 14.2 Trace  (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml LEDmux.twx LEDmux.ncd -o LEDmux.twr LEDmux.pcf -ucf
+binary_to_segment.ucf
+
+Design file:              LEDmux.ncd
+Physical constraint file: LEDmux.pcf
+Device,package,speed:     xc6slx16,csg324,C,-3 (PRODUCTION 1.22 2012-07-09)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+bin<0>         |A<0>           |    8.187|
+bin<0>         |A<1>           |    8.029|
+bin<0>         |A<2>           |    7.635|
+bin<0>         |A<3>           |    8.132|
+bin<0>         |A<4>           |    8.086|
+bin<0>         |A<5>           |    8.197|
+bin<0>         |A<6>           |    8.612|
+bin<1>         |A<0>           |    7.352|
+bin<1>         |A<1>           |    7.626|
+bin<1>         |A<2>           |    7.386|
+bin<1>         |A<3>           |    7.729|
+bin<1>         |A<4>           |    7.690|
+bin<1>         |A<5>           |    7.801|
+bin<1>         |A<6>           |    7.777|
+bin<2>         |A<0>           |    7.561|
+bin<2>         |A<1>           |    7.616|
+bin<2>         |A<2>           |    7.190|
+bin<2>         |A<3>           |    7.719|
+bin<2>         |A<4>           |    7.510|
+bin<2>         |A<5>           |    7.621|
+bin<2>         |A<6>           |    7.986|
+bin<3>         |A<0>           |    7.362|
+bin<3>         |A<1>           |    7.685|
+bin<3>         |A<2>           |    7.317|
+bin<3>         |A<3>           |    7.788|
+bin<3>         |A<4>           |    7.415|
+bin<3>         |A<5>           |    7.526|
+bin<3>         |A<6>           |    7.787|
+select<0>      |B<0>           |    7.513|
+select<0>      |B<1>           |    7.698|
+select<0>      |B<2>           |    7.922|
+select<0>      |B<3>           |    7.937|
+select<1>      |B<0>           |    7.731|
+select<1>      |B<1>           |    7.916|
+select<1>      |B<2>           |    8.189|
+select<1>      |B<3>           |    8.204|
+---------------+---------------+---------+
+
+
+Analysis completed Wed Dec 02 18:08:10 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 214 MB
+
+
+
